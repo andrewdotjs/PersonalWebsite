@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/stylesheet.css">
+    <script src="./scripts/bundle.js"></script>
+    <title>Andrew Williams</title>
+  </head>
+  <body>
+    <div id="navigation-bar" class="navigation-bar background-color">
+      <div class="navigation-buttons">  
+        <a class="navigation-button-direct" href="#introductory">
+          <div class="navigation-button">
+            <h1>Welcome</h1>
+          </div>
+        </a>
+        <a class="navigation-button-direct" href="#who-am-i">
+          <div class="navigation-button">
+            <h1>About Me</h1>
+          </div>
+        </a>
+        <a class="navigation-button-direct" href="#projects">
+          <div class="navigation-button">
+            <h1>Projects</h1>
+          </div>
+        </a>
+      </div>
+      <div class="resource-buttons">
+        <a class="resource-button-direct" href="" target="_blank">
+          <img src="./public/icons/youtube.svg"/>
+        </a>
+        <a class="resource-button-direct" href="https://github.com/andrewdotjs" target="_blank">
+          <img src="./public/icons/github.svg"/>
+        </a>
+        <a class="resource-button-direct" href="https://www.linkedin.com/in/andrewdotjs" target="_blank">
+          <img src="./public/icons/linkedin.svg"/>
+        </a>
+      </div>
+    </div>
+    <div id="background">
+      <img id="background-image" src="./public/images/test2.jpg"/>
+    </div>
+    <!-- vv Intro Panel vv -->
+    <div class="panel" id="introductory">
+      <div class="welcome-text-container">
+        <div class="intro-text-container">
+          <h1 class="introductory-text" id="name">Andrew Williams. Programmer, developer, and designer.</h1> 
+        </div>
+      </div>
+    </div>
+    <!--  vv Who am I Panel vv-->
+    <div class="panels">
+      <div class="panel" id="who-am-i">
+        <div class="overview-row-container">
+          <img id="overview-image" alt="Picture of Andrew Williams">
+          <div class="overview-column-container">
+            <div class="overview-text">
+              <h1 class="overview-header header-color">Background</h1>
+              <p class="overview-body text-color">
+                I am Andrew Williams, a full-stack web developer who specializes in more of the back-end half of the stack. I got started programming with Python when I was in high school, 
+                I wanted a way to make money on a video game without me being present on my computer. So I built a script that would automatically make me money in the game using Python and PyAutoGUI.
+                I have been programming for four years since then.
+              </p>
+            </div>
+            <div class="overview-text">
+              <h1 class="overview-header header-color">Hobbies</h1>
+              <p class="overview-body text-color">
+                I like to be outside and enjoy the sun and nature, I have plans to partake in both mountain biking and dirt biking within the foreseeable future. Currently, my hobbies include programming, gaming,
+                and video editing.
+              </p>
+            </div>
+            <div class="overview-text">
+              <h1 class="overview-header header-color">Skills</h1>
+              <p class="overview-body text-color">
+                I am proficient in many languages such as Python, Javascript, HTML, CSS, C++, and C. For the front-end side of web development, I am proficient in tools such as
+                React, Webpack, Babel, SCSS, NextJS, and Tailwind. For the back-end side of web development, I am proficient in tools and databases such as Express, Swagger, Postgres, and Mongo
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  vv Projects Panel vv-->
+      <div class="panel" id="projects">
+        <div id="project-container" class="project-container">
+          <div class="project-container" id="github-user"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
