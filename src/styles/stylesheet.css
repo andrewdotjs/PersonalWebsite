@@ -7,8 +7,6 @@
 }
 
 :root {
-  background-color: #2d2a3a;
-  color: rgb(255, 255, 255);
   font-family: 'Rubik';
   height: 100%;
   scroll-behavior: smooth;
@@ -16,16 +14,35 @@
   scroll-snap-type: y mandatory;
 }
 
-.header-color {
-  color: #826AED;
+
+
+body {
+  background: white;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
 }
 
 .text-color {
-  color: #FBFBFF;
+  color: black;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
 }
 
 .sub-text-color {
   color: #AAAAAA;
+}
+
+.dark-mode {
+  background-color: #2d2a3a !important;
+}
+
+.dark-mode-text {
+  color: #FBFBFF !important;
+}
+
+.dark-mode-icon {
+  fill: white !important;
+}
+.header-color {
+  color: #826AED;
 }
 
 /* Navigation Bar */
@@ -33,10 +50,10 @@
 .navigation-bar {
   position: fixed;
   display: flex;
-  background-color: #00000000;
+  background-color: transparent;
   flex-direction: row;
   top: 0;
-  left: calc(50% - 1px);
+  left: 50%;
   width: 100%;
   height: 70px;
   transform: translateX(-50%);
@@ -56,7 +73,8 @@
   width: auto;
   padding: 5px;
   text-decoration: none;
-  color: #FFFFFF;
+  color: black;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
 }
 
 .navigation-button {
@@ -75,6 +93,26 @@
   font-size: 20px;
 }
 
+.config-buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.config-button {
+  align-self: center;
+}
+
+.config-icon {
+  height: 30px;
+  width: 30px;
+  fill: black;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
+}
+
 /* Panel & Specifications */
 
 .panels {
@@ -84,14 +122,14 @@
   height: 100%;
   left: 0;
   z-index: 1;
-  background-color: #2d2a3a;
-  scroll-snap-type: y mandatory;
 }
 
 .panel {
   width: 100%;
   height: 100%;
   scroll-snap-align: center;
+  background-color: white;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
 }
 
 #background {
@@ -99,6 +137,7 @@
   left: 0;
   top: 0;
   z-index: 0;
+  background: transparent;
 }
 
 #background img {
@@ -252,19 +291,19 @@
   z-index: 1;
 }
 
-.repo-image {
+.project-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.repo-name {
+.project-name {
   margin: 0;
   padding: 0;
   font-size: 26px;
 }
 
-.repo-sub-text {
+.project-sub-text {
   margin: 0;
   padding: 0;
   font-size: 18px;
