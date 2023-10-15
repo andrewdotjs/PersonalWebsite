@@ -41,6 +41,7 @@ body {
 .dark-mode-icon {
   fill: white !important;
 }
+
 .header-color {
   color: #826AED;
 }
@@ -113,6 +114,17 @@ body {
   transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
 }
 
+#snap-icon {
+  fill: red;
+  height: 30px;
+  width: 30px;
+  transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
+}
+
+.snap-active {
+  fill: green !important;
+}
+
 /* Panel & Specifications */
 
 .panels {
@@ -127,9 +139,12 @@ body {
 .panel {
   width: 100%;
   height: 100%;
-  scroll-snap-align: center;
   background-color: white;
   transition: all 0.2s cubic-bezier(.17,.67,.64,.89);
+}
+
+.panel-snap {
+  scroll-snap-align: center;
 }
 
 #background {

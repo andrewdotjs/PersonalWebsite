@@ -9,10 +9,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const backgroundImage = document.getElementById('background-image');
   const projectContainer = document.getElementById('project-container');
   const themeButton = document.getElementById('theme-button');
+  const snapIcon = document.getElementById('snap-icon');
   const configIcons = document.getElementsByClassName('config-icon');
   
-  updateHeaderBar(window.scrollY, window.innerHeight, navigationButtons);
+  updateHeaderBar((window.scrollY + (window.innerHeight / 2)), window.innerHeight, navigationButtons);
   updateGithubProjects(projectContainer);
+  
+  snapIcon.onclick = () => {
+    for (let i = 0; i < panels.length; i++) {
+      panels[i].classList.toggle('panel-snap'); 
+    }
+    
+    snapIcon.classList.toggle('snap-active');
+  }
   
   themeButton.onclick = () => {
     root.classList.toggle('dark-mode');
@@ -43,7 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       backgroundImage.style.opacity = 1;
     }
     
-    updateHeaderBar(window.scrollY, window.innerHeight, navigationButtons);
+    console.log(window.scrollY)
+    updateHeaderBar((window.scrollY + (window.innerHeight / 2)), window.innerHeight, navigationButtons);
   }, 5));
 });
 
