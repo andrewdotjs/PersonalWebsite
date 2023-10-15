@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const themeButton = document.getElementById('theme-button');
   const configIcons = document.getElementsByClassName('config-icon');
   
+  updateHeaderBar(window.scrollY, window.innerHeight, navigationButtons);
   updateGithubProjects(projectContainer);
   
   themeButton.onclick = () => {
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       backgroundImage.style.opacity = 1;
     }
+    
+    updateHeaderBar(window.scrollY, window.innerHeight, navigationButtons);
   }, 5));
 });
 
@@ -71,4 +74,32 @@ const debounce = (func, timeout = 300) => {
     clearTimeout(timer);
     timer = setTimeout(() => { func.apply(this, args); }, timeout);
   };
+}
+
+const updateHeaderBar = (scrollYPosition, innerHeight, navigationButtons) => {
+  if (scrollYPosition < innerHeight) {
+    for (let i = 0; i < navigationButtons.length; i++) {
+      if (navigationButtons[i].id !== "introductory-marker") {
+        navigationButtons[i].style.display = "none";
+      } else {
+        navigationButtons[i].style.display = "block";
+      }
+    }
+  } else if (scrollYPosition >= innerHeight && scrollYPosition < (innerHeight * 2)) {
+    for (let i = 0; i < navigationButtons.length; i++) {
+      if (navigationButtons[i].id !== "about-marker") {
+        navigationButtons[i].style.display = "none";
+      } else {
+        navigationButtons[i].style.display = "block";
+      }
+    }
+  } else if (scrollYPosition >= (innerHeight * 2) && scrollYPosition < (innerHeight * 3)) {
+    for (let i = 0; i < navigationButtons.length; i++) {
+      if (navigationButtons[i].id !== "project-marker") {
+        navigationButtons[i].style.display = "none";
+      } else {
+        navigationButtons[i].style.display = "block";
+      }
+    }
+  }
 }
